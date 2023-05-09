@@ -4,7 +4,7 @@ resource "aws_instance" "instance" {
   vpc_security_group_ids = [data.aws_security_group.test.id]
 
   tags = {
-    Name = local.name
+    Name = var.component_name
   }
 }
 resource "null_resource" "provisioner" {
@@ -27,7 +27,7 @@ resource "null_resource" "provisioner" {
 }
 resource "aws_route53_record" "records" {
   zone_id  = "Z0587270PBVKKHW0FPNL"
-  name     = "${var.component_name}-dev.swedev99.online"
+  name     = "${var.component_name}-dev.pand4u.online"
   type     = "A"
   ttl      = 30
   records  = [aws_instance.instance.private_ip]
