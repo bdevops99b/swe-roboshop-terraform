@@ -26,7 +26,7 @@ resource "null_resource" "provisioner" {
   }
 }
 resource "aws_route53_record" "records" {
-  zone_id  = "Z0587270PBVKKHW0FPNL"
+  zone_id  = "Z09749362E9LBLZIEGY8G"
   name     = "${var.component_name}-dev.pand4u.online"
   type     = "A"
   ttl      = 30
